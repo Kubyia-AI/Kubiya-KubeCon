@@ -47,6 +47,11 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
       continue-on-error: true
 
+    - name: Intentional failure step
+      run: |
+        echo "This step will always fail"
+        exit 1
+
     #################################################
     #      KUBIYA BUILD ANALYSIS SECTION
     #################################################
